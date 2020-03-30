@@ -40,8 +40,7 @@ const choices = new Choices('.js-choices', {
 });
 
 
-document.querySelector('.js-choices').addEventListener('choice', function(e) {
-  localStorage.setItem('lang', e.detail.choice.value);
-})
-
-const choice = document.querySelector('.js-choice');
+window.addEventListener('resize', () => {
+  let vh = window.innerHeight * 0.01;
+  document.documentElement.style.setProperty('--vh', `${vh}px`);
+});
