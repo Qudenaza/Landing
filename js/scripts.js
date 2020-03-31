@@ -40,7 +40,40 @@ const choices = new Choices('.js-choices', {
 });
 
 
-window.addEventListener('resize', () => {
-  let vh = window.innerHeight * 0.01;
-  document.documentElement.style.setProperty('--vh', `${vh}px`);
-});
+
+let vh = window.innerHeight * 0.01;
+document.documentElement.style.setProperty('--vh', `${vh}px`);
+
+// const swiper = new Swiper('#swiperGallery', {
+//   loop: false,
+//   // slidesPerView: 3,
+//   effect: 'coverflow'
+// })
+
+const gallerySlider = document.querySelector('.about__controls');
+const images = document.querySelectorAll('.gallery__image')
+
+gallerySlider.addEventListener('click', function(e) {
+  if (e.target.tagName !== 'BUTTON') return;
+  
+  const buttons = gallerySlider.querySelectorAll('.controls__button');
+
+  buttons.forEach(button => button.classList.remove('controls__button--active'));  
+  
+  e.target.classList.add('controls__button--active');
+
+  const id = e.target.dataset.id;
+
+  images[id].classList = 'gallery__image gallery__image--1';
+
+  if ((images.length - 1) == id) {
+    images[0].classList = 'gallery__image gallery__image--2';
+    images[1].classList = 'gallery__image gallery__image--3';
+  } else if (id == 0) {
+    images[1].classList = 'gallery__image gallery__image--2';
+    images[2].classList = 'gallery__image gallery__image--3';
+  } else {
+    images[2].classList = 'gallery__image gallery__image--2';
+    images[0].classList = 'gallery__image gallery__image--3';
+  }
+})

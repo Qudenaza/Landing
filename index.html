@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/swiper.min.css">
     <link href="https://fonts.googleapis.com/css?family=Bebas+Neue&display=swap" rel="stylesheet"> 
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700&display=swap" rel="stylesheet"> 
     <title>Survive at all costs</title>
@@ -66,28 +67,61 @@
                 </a>
             </div>
             <span class="page-header__scroll">The story</span>
+            <div class="controls">
+                <button class="controls__button controls__button--active"></button>
+                <button class="controls__button"></button>
+                <button class="controls__button"></button>
+                <button class="controls__button"></button>
+                <span class="controls__arrow"></span>
+            </div>
         </div>
     </header>
     <main>
         <section class="about">
             <div class="about__container container">
-                <div class="about__col-left">
+                <div class="about__col about__col--left">
                     <h2 class="about__title title">
                         <span class="subtitle">What is SOS?</span>
                         Social battle royale game
                     </h2>
                     <p class="about__descr">
-                        Each round, <span>you</span> and <span>15</span> other contestants compete to escape a deadly island filled with monsters. The trick is: <span>three</span> people can survive. Will you run solo or form friendships with others to escape? 
-                        
+                        Each round, <span>you</span> and <span>15</span> other contestants compete to escape a deadly island filled with monsters. The trick is: <span>three</span> people can survive. Will you run solo or form friendships with others to escape?
+                    </p>
+                    <p class="about__descr">
                         Making the right decisions could be the difference between <span class="about__underline">life and death</span>.
                     </p>
                 </div>
-                <div class="about__col-right">
-                    <img class="about__image" src="images/gallery-image-1-mobile.jpg" alt="Первое изображение в галерее" widht="225" height="273">
+                <div class="about__col about__col--right">
+                    <figure class="gallery">
+                        <div class="gallery__slides">
+                            <picture class="gallery__image gallery__image--1">
+                                <source srcset="images/gallery-image-1-desktop.jpg" media="(min-width: 768px)">
+                                <img  src="images/gallery-image-1-mobile.jpg" alt="Первое изображение в галерее">
+                            </picture>
+                            <picture class="gallery__image gallery__image--2">
+                                <source srcset="images/gallery-image-2-desktop.jpg" media="(min-width: 768px)">
+                                <img  src="images/gallery-image-2-mobile.jpg" alt="Второе изображение в галерее">
+                            </picture>
+                            <picture class="gallery__image gallery__image--3">
+                                <source srcset="images/gallery-image-3-desktop.jpg" media="(min-width: 768px)">
+                                <img  src="images/gallery-image-3-mobile.jpg" alt="Третье изображение в галерее">
+                            </picture>
+                        </div>
+                        <button class="gallery__next"></button>
+                    </figure>
+                    <div class="controls about__controls">
+                        <button class="controls__button controls__button--active" data-id="0"></button>
+                        <button class="controls__button" data-id="1"></button>
+                        <button class="controls__button" data-id="2"></button>
+                        <button class="controls__button"></button>
+                        <button class="controls__button"></button>
+                        <button class="controls__button"></button>
+                    </div>
                 </div>
             </div>
         </section>
     </main>
+    <script src="js/swiper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/choices.js/public/assets/scripts/choices.min.js"></script>
     <script src="js/scripts.js"></script>
 </body>
